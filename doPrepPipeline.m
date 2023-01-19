@@ -5,7 +5,11 @@
 % Requires the EEG-Clean-Tools github repository, found at
 % https://github.com/VisLab/EEG-Clean-Tools. 
 
-function [EEG] = doPrepPipeline(EEG)
+% Input: EEG data in EEGlab format.
+% Ouput: Processed EEG data, details on prep output, and time of
+% processing.
+
+function [EEG, output, time] = doPrepPipeline(EEG)
 
 data = EEG;
 events = data.event;
@@ -31,7 +35,7 @@ end
 %% Initiate PrepPipeline
 % All we are doing here is initating the prepPipeline with default
 % settings.
-[data] = prepPipeline(data,[]);
+[data, output, time] = prepPipeline(data,[]);
 
 %% Generate report. 
 %Using EEG-Clean-Tools commands, we can generate summary and detailed
@@ -39,3 +43,5 @@ end
 
 newFileName = data.filename(1:end-5); %Remove the .vhdr from the filename to keep it clean. 
 publishPrepReport(data, [data.pathname newFilename 'summary.pdf'], [data.pathname newFileName 'detailed.pdf'], 1, true);
+
+EEG = data;

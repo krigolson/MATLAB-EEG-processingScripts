@@ -1,4 +1,9 @@
 %% Krigolson PREP Pipeline function
+% Shell function to call the PREP pipeline for EEG analysis. This shell is
+% written by Mat and Olav, but all credits to the VisLab. 
+
+% Requires the EEG-Clean-Tools github repository, found at
+% https://github.com/VisLab/EEG-Clean-Tools. 
 
 function [EEG] = doPrepPipeline(EEG)
 

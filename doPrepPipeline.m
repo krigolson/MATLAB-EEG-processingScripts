@@ -42,6 +42,6 @@ end
 %reports of the PREP process. 
 
 newFileName = data.filename(1:end-5); %Remove the .vhdr from the filename to keep it clean. 
-publishPrepReport(data, [data.pathname newFilename 'summary.pdf'], [data.pathname newFileName 'detailed.pdf'], 1, true);
+publishPrepReport(data, [data.pathname newFileName 'summary.pdf'], [data.pathname newFileName 'detailed.pdf'], 1, true);
 
 EEG = data;

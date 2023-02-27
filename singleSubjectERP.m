@@ -6,8 +6,8 @@ close all
 clc
 
 % specifcy the path to the data and the data filename
-pathName = '/Users/krigolson/Desktop/scriptData';
-fileName = 'Cognitive_Assessment_1037.vhdr';
+pathName = '/Users/krigolson/Desktop/Cognitive_Assessment_Baseline';
+fileName = 'Cognitive_Assessment_Baseline_1040.vhdr';
 
 % change to location where data is
 cd(pathName);

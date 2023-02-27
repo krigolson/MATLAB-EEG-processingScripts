@@ -41,7 +41,7 @@ end
 %Using EEG-Clean-Tools commands, we can generate summary and detailed
 %reports of the PREP process. 
 
-newFileName = data.filename(1:end-5); %Remove the .vhdr from the filename to keep it clean. 
-publishPrepReport(data, [data.pathname newFileName 'summary.pdf'], [data.pathname newFileName 'detailed.pdf'], 1, true);
+%newFileName = data.filename(1:end-5); %Remove the .vhdr from the filename to keep it clean. 
+%publishPrepReport(data, [data.pathname newFileName 'summary.pdf'], [data.pathname newFileName 'detailed.pdf'], 1, true);
 
 EEG = data;

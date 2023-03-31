@@ -47,10 +47,10 @@ if pipeLine == 1 % "Traditional" pipeline
     [EEG] = doRemoveEyeComponents(EEG); %Use IC Label to remove blinks
 
 elseif pipeLine == 2 % Simplified PREP Pipeline
+    [EEG, output, time] = doPrepPipeline(EEG); %PREP does its own noise removal and rereferencing
     
     [EEG] = doICA(EEG,1);
     [EEG] = doRemoveEyeComponents(EEG);
-    [EEG, output, time] = doPrepPipeline(EEG); %PREP does its own noise removal and rereferencing
 
 elseif pipeLine ==3 % Add in a filter before a PREP Pipeline
     [EEG] = doFilter(EEG,0.1,30,4,60,250); % Compare what happens when you filter before PREP
@@ -92,7 +92,7 @@ plot(1:30,FFTEO.data(13,1:30))
 hold on;
 plot(1:30,FFTEC.data(13,1:30))
 hold on;
-legend([{'Eyes Open'}, {'Eyes Closed'}]);
+legend(['Eyes Open', 'Eyes Closed']);
 
 %% Compare data quality 
 chanArtifacts(:,1) = EEGEC.channelArtifactPercentages(:,:);

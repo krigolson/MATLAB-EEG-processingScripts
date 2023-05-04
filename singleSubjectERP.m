@@ -13,7 +13,7 @@ clc
 
 % specifcy the path to the data and the data filename
 pathName = '/Users/mathewhammerstrom/Documents/GitHub/MATLAB-EEG-processingScripts/Cognitive_Assessment_Baseline';
-fileName = 'Cognitive_Assessment_Baseline_1042.vhdr';
+fileName = 'Cognitive_Assessment_Baseline_1043.vhdr';
 
 % change to location where data is
 cd(pathName);
@@ -37,7 +37,7 @@ end
 %% Pre-process Data: Pipeline Comparison
 % Determine which analysis pipeline you want to run:
 
-pipeLine = 1;
+pipeLine = 3;
 
 if pipeLine == 1 % "Traditional" pipeline
     [EEG] = doRereference(EEG,{'TP9','TP10'},'ALL',EEG.chanlocs);  %Rereference to mastoids

@@ -18,9 +18,15 @@ events = data.event;
 % Clear any boundary events. This prevents errors in the prepPipeline
 % call, and these markers are essentially useless in our data. 
 
-for counter = 1:length(events) %For all events/markers in our data,
+for counter = 1:size(events,2)-1%For all events/markers in our data,
     if strcmp(events(counter).type, 'boundary') %Find boundary event, and
-        data.event(counter) = []; %Delete it. 
+        data.event(counter) = []; %Delete it.
+    end
+    if events(counter).duration>1 %Find boundary event, and
+        data.event(counter) = []; %Delete it.
+    end    
+    if events(counter).latencey==1 %Find boundary event, and
+        data.event(counter) = []; %Delete it.
     end
 end
 

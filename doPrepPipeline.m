@@ -25,7 +25,7 @@ for counter = 1:size(events,2)-1%For all events/markers in our data,
     if events(counter).duration>1 %Find boundary event, and
         data.event(counter) = []; %Delete it.
     end    
-    if events(counter).latencey==1 %Find boundary event, and
+    if events(counter).latency==1 %Find boundary event, and
         data.event(counter) = []; %Delete it.
     end
 end

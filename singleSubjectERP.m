@@ -15,7 +15,11 @@ cd(pathName);
 % load the data
 EEG = doLoadBVData(pathName,fileName);
 
+<<<<<<< Updated upstream
 EEG = doFilter(EEG,0.1,30,2,60,EEG.srate);
+=======
+[EEG1, output, time] = doPrepPipeline(EEG);
+>>>>>>> Stashed changes
 
 %EEG = doICA(EEG,1);
 

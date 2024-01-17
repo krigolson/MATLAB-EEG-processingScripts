@@ -17,11 +17,11 @@ EEG = doLoadBVData(pathName,fileName);
 
 EEG = doFilter(EEG,0.1,30,2,60,EEG.srate);
 
-EEG = doICA(EEG,1);
+%EEG = doICA(EEG,1);
 
-EEG = doRemoveEyeComponents(EEG);
+%EEG = doRemoveEyeComponents(EEG);
 
-[EEG, output, time] = doPrepPipeline(EEG);
+%[EEG, output, time] = doPrepPipeline(EEG);
 
 EEG = doRereference(EEG,{'TP9','TP10'},{'ALL'},EEG.chanlocs);
 
